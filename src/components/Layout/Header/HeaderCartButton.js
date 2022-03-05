@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
+import React, { useEffect, useContext, useState } from "react";
 import CartIcon from "../../Cart/CartIcon";
 import classes from "./HeaderCartButton.module.css";
 import CartContext from "../../../store/cart-context";
 
 function HeaderCartButton({ onShowCart }) {
+  const [isCartButtonAnimated, setIsCartButtonAnimated] = useState(false);
   const cartContext = useContext(CartContext);
   const numberOfCartItems = cartContext.items.reduce(
     (accumulator, currentValue) => {
@@ -12,9 +13,24 @@ function HeaderCartButton({ onShowCart }) {
     0
   );
 
+  useEffect(() => {
+    if (cartContext.totalAmount === 0) {
+      return;
+    }
+    setIsCartButtonAnimated(true);
+    const timer = setTimeout(() => {
+      setIsCartButtonAnimated(false);
+    }, 300);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [cartContext.totalAmount]);
+
   return (
     <button
-      className={`${classes.button} ${classes.bump}`}
+      className={`${classes.button} ${
+        isCartButtonAnimated ? classes.bump : ""
+      }`}
       onClick={onShowCart}
     >
       <span className={classes.icon}>
