@@ -4,10 +4,10 @@ import AvailableMeals from "./AvailableMeals";
 
 function Meals() {
   return (
-    <>
+    <main>
       <MealsSummary />
       <AvailableMeals />
-    </>
+    </main>
   );
 }
 
