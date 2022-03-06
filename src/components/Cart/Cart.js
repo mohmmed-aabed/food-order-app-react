@@ -6,7 +6,8 @@ import CartContext from "../../store/cart-context";
 import formatPriceDollar from "../../helpers/format-price";
 import CartItem from "./CartItem";
 
-function Cart({ onHideCart }) {
+function Cart(props) {
+  const { onHideCart } = props;
   const cartContext = useContext(CartContext);
   const cartHasItems = cartContext.items.length > 0;
   const totalAmount = formatPriceDollar(cartContext.totalAmount);

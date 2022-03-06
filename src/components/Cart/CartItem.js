@@ -1,7 +1,8 @@
 import classes from "./CartItem.module.css";
 import formatPriceDollar from "../../helpers/format-price";
 
-const CartItem = ({ price, name, quantity, onAdd, onRemove }) => {
+const CartItem = (props) => {
+  const { price, name, quantity, onAdd, onRemove } = props;
   const formattedPrice = formatPriceDollar(price);
 
   return (

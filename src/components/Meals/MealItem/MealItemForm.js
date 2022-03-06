@@ -2,7 +2,8 @@ import React, { useRef } from "react";
 import classes from "./MealItemForm.module.css";
 import Input from "../../UI/Input";
 
-function MealItemForm({ id, onAddToCart }) {
+function MealItemForm(props) {
+  const { id, onAddToCart } = props;
   const amountInputRef = useRef();
 
   const submitForm = (event) => {

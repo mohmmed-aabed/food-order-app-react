@@ -3,7 +3,9 @@ import mealsImage from "../../../assets/meals.jpg";
 import classes from "./Header.module.css";
 import HeaderCartButton from "./HeaderCartButton";
 
-function Header({ onShowCart }) {
+function Header(props) {
+  const { onShowCart } = props;
+
   return (
     <>
       <header className={classes.header}>

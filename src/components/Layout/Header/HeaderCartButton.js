@@ -3,7 +3,8 @@ import CartIcon from "../../Cart/CartIcon";
 import classes from "./HeaderCartButton.module.css";
 import CartContext from "../../../store/cart-context";
 
-function HeaderCartButton({ onShowCart }) {
+function HeaderCartButton(props) {
+  const { onShowCart } = props;
   const [isCartButtonAnimated, setIsCartButtonAnimated] = useState(false);
   const cartContext = useContext(CartContext);
   const numberOfCartItems = cartContext.items.reduce(
