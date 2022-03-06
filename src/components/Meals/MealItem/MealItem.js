@@ -6,7 +6,6 @@ import CartContext from "../../../store/cart-context";
 
 function MealItem(props) {
   const cartContext = useContext(CartContext);
-
   const { id, name, description, price } = props;
 
   const addItemToCart = (quantity) => {
