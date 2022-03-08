@@ -15,7 +15,7 @@ function AvailableMeals() {
 
       try {
         const response = await fetch(
-          "https://food-order-app-react-976da-default-rtdb.firebaseio.com/meals.jso"
+          "https://food-order-app-react-976da-default-rtdb.firebaseio.com/meals.json"
         );
 
         if (response.ok) {
