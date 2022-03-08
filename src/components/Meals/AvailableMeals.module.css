@@ -9,6 +9,16 @@
   list-style: none;
 }
 
+.section {
+  text-align: center;
+  padding: 1rem 0;
+  color: white;
+}
+
+.meals-error {
+  color: red;
+}
+
 @keyframes meals-appear {
   from {
     opacity: 0;
